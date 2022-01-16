@@ -8,7 +8,7 @@ import lombok.Value;
 
 public class CreateBuildingUseCase extends UseCase<CreateBuildingUseCase.Input, CreateBuildingUseCase.Output> {
 
-    private BuildingRepository buildingRepository;
+    private final BuildingRepository buildingRepository;
 
     public CreateBuildingUseCase(BuildingRepository buildingRepository) {
         this.buildingRepository = buildingRepository;
@@ -21,7 +21,7 @@ public class CreateBuildingUseCase extends UseCase<CreateBuildingUseCase.Input, 
             throw BuildingException.DUPLICATED_NAME;
         }
 
-        Building building = Building.newInstance(
+        Building building = Building.create(
                 input.userId,
                 input.name,
                 input.type

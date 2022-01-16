@@ -8,7 +8,7 @@ import java.util.List;
 
 public class GetBuildingListUseCase extends UseCase<GetBuildingListUseCase.Input, GetBuildingListUseCase.Output> {
 
-    private BuildingRepository buildingRepository;
+    private final BuildingRepository buildingRepository;
 
     public GetBuildingListUseCase(BuildingRepository buildingRepository) {
         this.buildingRepository = buildingRepository;
@@ -25,13 +25,12 @@ public class GetBuildingListUseCase extends UseCase<GetBuildingListUseCase.Input
 
     @Value
     public static class Input implements UseCase.Input {
-        private final Long id;
-
-        private final Long userId;
+        Long id;
+        Long userId;
     }
 
     @Value
     public static class Output implements UseCase.Output {
-        private final List<Building> buildings;
+        List<Building> buildings;
     }
 }
