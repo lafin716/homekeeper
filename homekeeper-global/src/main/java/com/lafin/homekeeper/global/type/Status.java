@@ -1,9 +1,8 @@
 package com.lafin.homekeeper.global.type;
 
-public enum UserStatus {
+public enum Status {
 
     ACTIVE,
     INACTIVE,
-    BLOCKED,
     REMOVED
 }

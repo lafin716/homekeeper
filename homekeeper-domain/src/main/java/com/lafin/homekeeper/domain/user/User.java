@@ -1,6 +1,6 @@
 package com.lafin.homekeeper.domain.user;
 
-import com.lafin.homekeeper.global.type.UserStatus;
+import com.lafin.homekeeper.global.type.Status;
 import com.lafin.homekeeper.global.type.UserType;
 import lombok.*;
 
@@ -14,7 +14,7 @@ public class User {
 
     private Long id;
 
-    private UserStatus status;
+    private Status status;
 
     private String email;
 
@@ -31,12 +31,12 @@ public class User {
     private LocalDateTime deletedAt;
 
     public void active() {
-        this.status = UserStatus.ACTIVE;
+        this.status = Status.ACTIVE;
         this.updatedAt = LocalDateTime.now();
     }
 
     public void inActive() {
-        this.status = UserStatus.INACTIVE;
+        this.status = Status.INACTIVE;
         this.updatedAt = LocalDateTime.now();
     }
 
@@ -52,7 +52,7 @@ public class User {
 
     public static User createUser(String email, String name, String password) {
         return User.builder()
-                .status(UserStatus.ACTIVE)
+                .status(Status.ACTIVE)
                 .email(email)
                 .name(name)
                 .password(password)
@@ -63,7 +63,7 @@ public class User {
 
     public static User createAdmin(String email, String name, String password) {
         return User.builder()
-                .status(UserStatus.ACTIVE)
+                .status(Status.ACTIVE)
                 .email(email)
                 .name(name)
                 .password(password)

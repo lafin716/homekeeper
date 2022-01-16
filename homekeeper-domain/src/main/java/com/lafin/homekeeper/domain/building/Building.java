@@ -1,6 +1,6 @@
 package com.lafin.homekeeper.domain.building;
 
-import com.lafin.homekeeper.global.type.BuildingStatus;
+import com.lafin.homekeeper.global.type.Status;
 import com.lafin.homekeeper.global.type.BuildingType;
 import lombok.*;
 
@@ -16,7 +16,7 @@ public class Building {
 
     private Long userId;
 
-    private BuildingStatus status;
+    private Status status;
 
     private String name;
 
@@ -29,7 +29,7 @@ public class Building {
     private LocalDateTime deletedAt;
 
     public void delete() {
-        status = BuildingStatus.REMOVED;
+        status = Status.REMOVED;
         deletedAt = LocalDateTime.now();
     }
 
@@ -44,7 +44,7 @@ public class Building {
     public static Building create(Long userId, String name, BuildingType type) {
         return Building.builder()
                 .userId(userId)
-                .status(BuildingStatus.ACTIVE)
+                .status(Status.ACTIVE)
                 .name(name)
                 .type(type)
                 .createdAt(LocalDateTime.now())
