@@ -15,13 +15,14 @@ public class CreateRoomUseCase extends UseCase<CreateRoomUseCase.Input, CreateRo
     @Override
     public Output execute(Input input) {
 
-        Room room = Room.create(input.name);
+        Room room = Room.create(input.buildingId, input.name);
 
         return new Output(repository.save(room));
     }
 
     @Value
     public static class Input implements UseCase.Input {
+        Long buildingId;
         String name;
     }
 

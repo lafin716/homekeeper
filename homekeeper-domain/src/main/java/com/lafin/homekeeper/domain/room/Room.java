@@ -7,13 +7,13 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
+@Builder(access = AccessLevel.PRIVATE )
 @ToString
 public class Room {
 
     private Long id;
+
+    private Long buildingId;
 
     private Status status;
 
@@ -27,17 +27,19 @@ public class Room {
 
     private LocalDateTime deletedAt;
 
-    public static Room create(String name) {
+    public static Room create(Long buildingId, String name) {
         return Room.builder()
                 .status(Status.ACTIVE)
+                .buildingId(buildingId)
                 .name(name)
                 .createdAt(LocalDateTime.now())
                 .build();
     }
 
-    public static Room createWithStuffs(String name, List<Stuff> stuffs) {
+    public static Room createWithStuffs(Long buildingId, String name, List<Stuff> stuffs) {
         return Room.builder()
                 .status(Status.ACTIVE)
+                .buildingId(buildingId)
                 .name(name)
                 .stuffs(stuffs)
                 .createdAt(LocalDateTime.now())
