@@ -1,4 +1,4 @@
-package com.lafin.homekeeper.domain.entity.stuff;
+package com.lafin.homekeeper.domain.room;
 
 import com.lafin.homekeeper.global.type.StuffUnit;
 import lombok.*;
@@ -9,8 +9,6 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 public class Stuff {
-
-    private Long id;
 
     private Long roomId;
 

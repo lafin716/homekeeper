@@ -1,4 +1,4 @@
-package com.lafin.homekeeper.domain.entity.user;
+package com.lafin.homekeeper.domain.user;
 
 import com.lafin.homekeeper.global.type.UserType;
 import lombok.*;

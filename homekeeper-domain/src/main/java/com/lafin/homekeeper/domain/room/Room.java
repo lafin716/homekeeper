@@ -1,4 +1,4 @@
-package com.lafin.homekeeper.domain.entity.room;
+package com.lafin.homekeeper.domain.room;
 
 import lombok.*;
 
