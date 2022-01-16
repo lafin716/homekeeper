@@ -25,7 +25,6 @@ public class GetBuildingListUseCase extends UseCase<GetBuildingListUseCase.Input
 
     @Value
     public static class Input implements UseCase.Input {
-        Long id;
         Long userId;
     }
 
