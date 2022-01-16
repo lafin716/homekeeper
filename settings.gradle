@@ -1,0 +1,4 @@
+rootProject.name = 'homekeeper'
+include 'homekeeper-global'
+include 'homekeeper-domain'
+
